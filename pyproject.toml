@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kbench-amongus"
+version = "0.1.0"
+description = "Configurable Among Us environment for Kaggle Benchmarks LLM agents."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "Faker",
+    "gradio",
+    "networkx",
+    "numpy",
+]
+
+[project.scripts]
+kbench_amongus_gradio = "kbench_amongus.gradio_app:main"
+
+[tool.setuptools.packages.find]
+include = ["kbench_amongus*"]
+
+[tool.setuptools.package-data]
+kbench_amongus = ["assets/*.png"]

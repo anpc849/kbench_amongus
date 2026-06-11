@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.gradio/
+.ipynb_checkpoints/
+build/
+dist/
+*.run.json
+*.task.json
+*.log
