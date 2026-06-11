@@ -1,28 +1,28 @@
 # kbench_amongus
 
-Configurable Among Us environment for Kaggle Benchmarks LLM agents.
+Configurable **Among Us** environment for Kaggle Benchmarks LLM agents.
 
-## Kaggle Notebook Usage
-
-Cell 1:
+## Installation
 
 ```bash
 git clone https://github.com/anpc849/kbench_amongus
 cd kbench_amongus
 pip install -e .
-```
+````
 
-Restart the kernel.
+## Gradio App
 
-Cell 2:
+Launch the interactive Gradio app:
 
 ```bash
-!kbench_amongus_gradio --share True
+kbench_amongus_gradio --share True
 ```
 
-Restart the kernel before running benchmark code if needed.
+The Gradio app expects `kaggle_benchmarks` to be importable.
 
-Cell 3:
+In Kaggle notebooks, models are usually loaded automatically by the benchmark environment. For local desktop testing, `kbench_amongus.gradio_app.load_kbench()` falls back to a local `kaggle-benchmarks/.env` file only when `kbench.llms` is empty.
+
+## Kaggle Notebook Usage
 
 ```python
 import kaggle_benchmarks as kbench
@@ -30,12 +30,7 @@ import kbench_amongus as amongus
 
 @kbench.task(name="kbench-amongus")
 def kbench_amongus(llm) -> int:
-    # Build a GameConfig with llm as one player agent.
+    # Build a GameConfig with `llm` as one player agent.
     # Return 1 if the evaluated impostor wins, otherwise 0.
     ...
 ```
-
-The Gradio app expects `kaggle_benchmarks` to be importable. In Kaggle notebooks,
-the benchmark environment usually loads models automatically. For local desktop
-testing, `kbench_amongus.gradio_app.load_kbench()` falls back to a local
-`kaggle-benchmarks/.env` only when `kbench.llms` is empty.
