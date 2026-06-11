@@ -1014,7 +1014,7 @@ def render_replay_log(game_log: dict[str, Any], event_index: int) -> str:
     visible_events = events[: event_index + 1]
     players_by_id = {player["id"]: player for player in game_log.get("players", [])}
     lines = ["<div class='side-log'><h3>Replay</h3>"]
-    for event in visible_events[-40:]:
+    for event in visible_events:
         timestep = html.escape(str(event.get("timestep", "")))
         if event.get("type") == "agent_decision":
             player_id = html.escape(str(event.get("player_id", "")))
