@@ -34,3 +34,7 @@ def kbench_amongus(llm) -> int:
     # Return 1 if the evaluated impostor wins, otherwise 0.
     ...
 ```
+
+## Acknowledgements
+
+This project incorporates and adapts portions of code from [cyzus/among-agents](https://github.com/cyzus/among-agents). We gratefully acknowledge the original author(s) for their work.
